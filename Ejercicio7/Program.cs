@@ -12,8 +12,11 @@ namespace Ejercicio7
         static void Main(string[] args)
         {
             int[] X = new int[MAX];
+            string[] nombres = new string[MAX];
+
             LEER(X);
             impirmir(X);
+
             if (buscar(X, 15) == true)
             {
                 Console.Write("\n 15 Numero encontrado");
@@ -30,8 +33,14 @@ namespace Ejercicio7
             {
                 Console.Write("\n 20 No Existe");
             }
+            //TRABAJANDO CON EL VECTOR DE NOMBRES 
+            Console.Write("\n Ingrese los nombres");
+            LEERNOMBRES(nombres);
+            impirmirNOMBRES(nombres);
+
             Console.ReadKey();
         }
+
         public static void LEER(int[] X)
         {
             for (int i = 0; i < MAX; i++)
@@ -51,8 +60,6 @@ namespace Ejercicio7
                 Console.WriteLine($"Elementos:{num}");
 
             }
-
-
         }
 
         public static bool buscar(int[] X, int y)
@@ -80,6 +87,27 @@ namespace Ejercicio7
 
             }
             return encontado;
+        }
+        public static void LEERNOMBRES(string[] X)
+        {
+            for (int i = 0; i < MAX; i++)
+            {
+                Console.WriteLine("Ingrese el elemento{0}", i + 1);
+                X[i] = Console.ReadLine();
+
+
+            }
+
+        }
+        public static void impirmirNOMBRES(string[] X)
+        {
+            foreach (string num in X)
+            {
+                Console.WriteLine($"Elementos:{num}");
+
+            }
+
+
         }
     }
 }
